@@ -1,21 +1,18 @@
 import java.util.ArrayList;
-// import java.util.LinkedList;
 import java.util.Scanner;
 
 public class ProjectMainKs {
 
-	public static void main(String[] args)  {  // throws Exception {                // throws StackOverflowError {
+	public static void main(String[] args)  {  
 	    
 	    String source = "";
-       // String singleLetterCode ="";
-       // String substring;
 	    String peptide =">";
         
         
         ArrayList<String> codons = new ArrayList<String>();
 	   
 	    //Objekte vom Typ Translatable (Klassen die das Interface implementieren) 
-	    // zum Vergleich des substring mit den jeweiligen spezifischen Codons f¸r jede AA (compareSub)
+	    // zum Vergleich des substring mit den jeweiligen spezifischen Codons f√ºr jede AA (compareSub)
         Translatable aa1 = new Methionin("M");
 	    Translatable aa2 = new Alanin("A");
 	    Translatable aa3 = new Valin("V");
@@ -59,10 +56,9 @@ public class ProjectMainKs {
 	    aa19.setNextChain(aa20);  
 	    aa20.setNextChain(aa2);
 	 
-	             // aa20 -> aa21 -> aa2 nicht weglassen, es geht ja in der Codon-Liste weiter mit dem n‰chsten Codon..
-	             // MethioninSecond wird eingesetzt anstelle von Methionin f¸r den zweiten und alle weiteren Durchlauf/Durchl‰ufe 
-	             // wegen dem pull.getCodon()-Befehl bei Methionin und i=0; (sonst startet der Index immer wieder bei 0)     
-	            // daf¸r darf also auch nicht die Anweisung nextInChain.compareSub im else{}-Block zum Schluss wegfallen !!!
+	       
+	             // aa20 -> aa2    es geht ja in der Codon-Liste weiter mit dem n√§chsten Codon.. (Methionin ist nur Start-codon, deshalb zu aa2)
+	             //  daf√ºr darf also auch nicht die Anweisung nextInChain.compareSub im else{}-Block zum Schluss wegfallen !!!
 	    
 		Scanner scan = new Scanner (System.in);
 		System.out.println("Bitte geben Sie eine RNA-Sequenz ein. ");
