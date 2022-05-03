@@ -9,7 +9,7 @@ public class ProjectMainKs {
 	    String peptide =">";
         
         
-        ArrayList<String> codons = new ArrayList<String>();
+       	 ArrayList<String> codons = new ArrayList<String>();
 	   
 	    //Objekte vom Typ Translatable (Klassen die das Interface implementieren) 
 	    // zum Vergleich des substring mit den jeweiligen spezifischen Codons für jede AA (compareSub)
@@ -60,31 +60,32 @@ public class ProjectMainKs {
 	             // aa20 -> aa2    es geht ja in der Codon-Liste weiter mit dem nächsten Codon.. (Methionin ist nur Start-codon, deshalb zu aa2)
 	             //  dafür darf also auch nicht die Anweisung nextInChain.compareSub im else{}-Block zum Schluss wegfallen !!!
 	    
-		Scanner scan = new Scanner (System.in);
-		System.out.println("Bitte geben Sie eine RNA-Sequenz ein. ");
-        System.out.println("Die Sequenz muss aus den Nucleotiden A, U, G oder C bestehen und mit dem Startcodon AUG beginnen.");	
+	    Scanner scan = new Scanner (System.in);
+	    System.out.println("Bitte geben Sie eine RNA-Sequenz ein. ");
+            System.out.println("Die Sequenz muss aus den Nucleotiden A, U, G oder C bestehen und mit dem Startcodon AUG beginnen.");	
 		
 		source = scan.next();
 		source = source.toUpperCase();
 		
-		if (!source.startsWith("AUG")){
-	    System.out.println("Bitte erneut eingeben, die Sequenz muss mit dem Startcodon AUG beginnen.");	
-	    source = scan.next();	
-	    source = source.toUpperCase();
+	     if (!source.startsWith("AUG")){
+             System.out.println("Bitte erneut eingeben, die Sequenz muss mit dem Startcodon AUG beginnen.");	
+	      
+	        source = scan.next();	
+	        source = source.toUpperCase();
 		}
 		
 		scan.close();
 		
-	    Substring sub = new Substring (source);  //Objekt vom Typ Substring
-	    ProteinSequence prot1 = new ProteinSequence ();
-	  //   AminoAcids AA = new AminoAcids();
-		codons = sub.createSubString(source);
+	    Substring sub = new Substring (source);             //Objekt vom Typ Substring
+	    ProteinSequence prot1 = new ProteinSequence ();     //Objekt vom Typ ProteinSequence
+		
+	    codons = sub.createSubString(source);
 
 	    System.out.println("Die Substrings: " + codons);
 	         
 	 
-	        peptide = prot1.getPeptide();
-	        aa1.compareSub(codons, peptide);  
+	      peptide = prot1.getPeptide();
+	      aa1.compareSub(codons, peptide);  
 	    
              
 	    
