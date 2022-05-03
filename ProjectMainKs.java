@@ -13,7 +13,7 @@ public class ProjectMainKs {
 	   
 	    //Objekte vom Typ Translatable (Klassen die das Interface implementieren) 
 	    // zum Vergleich des substring mit den jeweiligen spezifischen Codons für jede AA (compareSub)
-        Translatable aa1 = new Methionin("M");
+            Translatable aa1 = new Methionin("M");
 	    Translatable aa2 = new Alanin("A");
 	    Translatable aa3 = new Valin("V");
 	    Translatable aa4 = new Leucin("L");
