@@ -1,15 +1,12 @@
 import java.util.ArrayList;
-// import java.util.LinkedList;
 
 public class Substring {
 	
-	// substring(int, int) - Method in class java.lang.StringBuffer
-	
 	private String createSubstring;
 	private String substring;
-    private String RNASequence;
-    private 
-    private ArrayList<String> codons = new ArrayList<String>();
+        private String RNASequence;
+
+        private ArrayList<String> codons = new ArrayList<String>();
   
 
 	public Substring (String RNASequence) {
@@ -17,7 +14,7 @@ public class Substring {
     }
 	
     
-	public ArrayList<String> createSubString(String RNAsequence) {     //scheint zu klappen, es werden jeweils 3-AA-Substrings gebildet :)
+	public ArrayList<String> createSubString(String RNAsequence) {     // es werden jeweils 3-Basen-Substrings gebildet :)
 		for (int i=0; i<RNASequence.length(); i++) {
 	    substring = RNASequence.substring(i,i+3);
 		i = i+2;
