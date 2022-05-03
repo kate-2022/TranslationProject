@@ -25,7 +25,7 @@ public class ProteinSequence {
  
 	@Override
 	public String toString() {
-    return "Die Aminos‰re-Sequenz ist: " + proteinSequence ;
+    return "Die Aminos√§re-Sequenz ist: " + proteinSequence ;
 	}
 	
 
@@ -41,10 +41,10 @@ public class ProteinSequence {
 
 	
 
-	public String getSubstring(String substring) {
+	/* public String getSubstring(String substring) {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}*/
 
 	public String getProteinSequence() {
 		return proteinSequence;
