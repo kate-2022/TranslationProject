@@ -42,7 +42,7 @@ public class GlutamicAcid extends AminoAcids implements Translatable {
 			     return peptide; }  
 		  
 		  else {   
-			  System.out.println("Dieses Codon war ungültig");      
+			  System.out.println("Dieses Codon war ungültig! Bitte überprüfen Sie Ihre Eingabe.");      
 			  System.exit(0) ;    // das hat gefehlt! :D
 			 // return null;
 			  
