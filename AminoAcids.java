@@ -10,9 +10,7 @@ public class AminoAcids implements Translatable {
 	protected int i;
 	protected int j;
     
-	
-	
-    
+
 	public String proteinSequence(String peptide, String singleLetterCode) {
 		peptide = peptide + singleLetterCode;
 		return peptide;
@@ -41,8 +39,4 @@ public class AminoAcids implements Translatable {
 		return null;
 	}
     
-    
-    
-
-
 }
