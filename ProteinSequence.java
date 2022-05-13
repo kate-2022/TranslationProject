@@ -1,14 +1,11 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-
-
 public class ProteinSequence { 
 	
 	private String proteinSequence;
 	private String peptide;
-    // private String aminoAcids;
-	// private Translatable translation;
-	
+
+	public ProteinSequence (String peptide) {
+		this.peptide = peptide;
+	}
 
 
 /*	public String proteinSequence(String singleLetterCode) {
@@ -41,10 +38,10 @@ public class ProteinSequence {
 
 	
 
-	/* public String getSubstring(String substring) {
+	public String getSubstring(String substring) {
 		// TODO Auto-generated method stub
 		return null;
-	}*/
+	}
 
 	public String getProteinSequence() {
 		return proteinSequence;
@@ -53,9 +50,5 @@ public class ProteinSequence {
 	public void setProteinSequence(String proteinSequence) {
 		this.proteinSequence = proteinSequence;
 	}
-
-
-
-
 
 }
