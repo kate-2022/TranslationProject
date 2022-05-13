@@ -1,16 +1,17 @@
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class AminoAcids implements Translatable {
 	
     protected Translatable nextInChain;
 	protected String singleLetterCode;
-	protected ProteinSequence aminoAcid;
+	protected ProteinSequence aminoAcid = new ProteinSequence("");
 	// protected String peptide;
 	protected Substring pull = new Substring ("");  
 	protected int i;
 	protected int j;
     
+	
+	
     
 	public String proteinSequence(String peptide, String singleLetterCode) {
 		peptide = peptide + singleLetterCode;
