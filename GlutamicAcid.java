@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-// import java.util.LinkedList;
 
 public class GlutamicAcid extends AminoAcids implements Translatable {
 	
@@ -22,7 +21,8 @@ public class GlutamicAcid extends AminoAcids implements Translatable {
 
 	
 	public String compareSub(ArrayList<String>codons, String peptide) {     
-		 if (i == codons.size()-1) {   
+	
+		if (i == codons.size()-1) {   
 			    System.out.print(peptide.toString());   
 		    }
 		 
@@ -42,19 +42,17 @@ public class GlutamicAcid extends AminoAcids implements Translatable {
 			     return peptide; }  
 		  
 		  else {   
-			  System.out.println("Dieses Codon war ungültig");                                     
- 			  i+=1;
-			  nextInChain.compareSub(codons, peptide);
+			  System.out.println("Dieses Codon war ungÃ¼ltig");      
+			  System.exit(0) ;    // das hat gefehlt! :D
+			 // return null;
 			  
 		 		  }
 	 }
 		  return peptide;
 	  }
 	
+
 	
-	
-	
-     
      public String getSingleLetterCode() {
  		return singleLetterCode;
  	}
