@@ -6,14 +6,16 @@ public class ProjectMainKs {
 	public static void main(String[] args)  {  
 	    
 	    String source = "";
+       // String singleLetterCode ="";
+       // String substring;
 	    String peptide =">";
         
         
-       	 ArrayList<String> codons = new ArrayList<String>();
+       ArrayList<String> codonsM = new ArrayList<String>();
 	   
 	    //Objekte vom Typ Translatable (Klassen die das Interface implementieren) 
 	    // zum Vergleich des substring mit den jeweiligen spezifischen Codons für jede AA (compareSub)
-            Translatable aa1 = new Methionin("M");
+        Translatable aa1 = new Methionin("M");
 	    Translatable aa2 = new Alanin("A");
 	    Translatable aa3 = new Valin("V");
 	    Translatable aa4 = new Leucin("L");
@@ -56,38 +58,36 @@ public class ProjectMainKs {
 	    aa19.setNextChain(aa20);  
 	    aa20.setNextChain(aa2);
 	 
-	       
 	             // aa20 -> aa2    es geht ja in der Codon-Liste weiter mit dem nächsten Codon.. (Methionin ist nur Start-codon, deshalb zu aa2)
 	             //  dafür darf also auch nicht die Anweisung nextInChain.compareSub im else{}-Block zum Schluss wegfallen !!!
 	    
-	    Scanner scan = new Scanner (System.in);
-	    System.out.println("Bitte geben Sie eine RNA-Sequenz ein. ");
-            System.out.println("Die Sequenz muss aus den Nucleotiden A, U, G oder C bestehen und mit dem Startcodon AUG beginnen.");	
+		Scanner scan = new Scanner (System.in);
+		System.out.println("Bitte geben Sie eine RNA-Sequenz ein. ");
+        System.out.println("Die Sequenz muss aus den Nucleotiden A, U, G oder C bestehen und mit dem Startcodon AUG beginnen.");	
 		
 		source = scan.next();
 		source = source.toUpperCase();
 		
-	     if (!source.startsWith("AUG")){
-             System.out.println("Bitte erneut eingeben, die Sequenz muss mit dem Startcodon AUG beginnen.");	
-	      
-	        source = scan.next();	
-	        source = source.toUpperCase();
+		if (!source.startsWith("AUG")){
+	    System.out.println("Bitte erneut eingeben, die Sequenz muss mit dem Startcodon AUG beginnen.");	
+	    source = scan.next();	
+	    source = source.toUpperCase();
 		}
 		
 		scan.close();
 		
-	    Substring sub = new Substring (source);             //Objekt vom Typ Substring
-	    ProteinSequence prot1 = new ProteinSequence ();     //Objekt vom Typ ProteinSequence
-		
-	    codons = sub.createSubString(source);
+	    Substring sub = new Substring (source);  //Objekt vom Typ Substring
+	   // ProteinSequence peptide = new ProteinSequence (">");
+	  //   AminoAcids AA = new AminoAcids();
+		codonsM = sub.getCodons(); 
+		codonsM = sub.createSubString(source);
 
-	    System.out.println("Die Substrings: " + codons);
+	    System.out.println("Die Substrings: " + codonsM);
 	         
 	 
-	      peptide = prot1.getPeptide();
-	      aa1.compareSub(codons, peptide);  
+	        aa1.compareSub(codonsM, peptide);  
 	    
-             
+             // gültige Codons Bsp.  auguauugucaa, augcaucuuggc 
 	    
 	   // System.out.print(peptide.toString());  
 	                        // kein Zeilenumbruch, deshalb ohne ln !! ( die AA-Sequenz/ das Peptid soll kombiniert ausgegeben werden)
