@@ -26,10 +26,10 @@ public class Alanin extends AminoAcids implements Translatable {
 	public String compareSub(ArrayList<String>codons, String peptide)  {
 		pull.getCodons();
 	    aminoAcid.getPeptide();  
-		if (i == codons.size()-1) {   
+		if (i == codons.size()) {   
 			    System.out.print(peptide.toString());   
 		  }
-		  while( i < codons.size()-1) {  
+		  while( i <= codons.size()-1) {  
 	 
 			  if (codons.get(i).equals("GCA")) {
 				singleLetterCode = "A";
