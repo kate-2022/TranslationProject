@@ -22,10 +22,10 @@ public class Leucin extends AminoAcids implements Translatable {
 	
 	
 	public String compareSub(ArrayList<String>codons, String peptide){	 
-		 if (i == codons.size()-1) {   
+		 if (i == codons.size()) {   
 			    System.out.print(peptide.toString());   
 		  }
-		  while( i < codons.size()-1) {  
+		  while( i <= codons.size()-1) {  
 		  if (codons.get(i).equals("UUA")) {
 				singleLetterCode = "L";
 			     proteinSequence(peptide, singleLetterCode);
