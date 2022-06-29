@@ -33,7 +33,7 @@ public class Glutamin extends AminoAcids implements Translatable {
 				singleLetterCode = "Q";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_Glut1");
+			     System.out.println(singleLetterCode+"_Glut1");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestGlut1");	
@@ -45,7 +45,7 @@ public class Glutamin extends AminoAcids implements Translatable {
 				singleLetterCode = "Q";
 			     i+=1;	
 			     
-			     System.out.print(singleLetterCode+"_Glut2");
+			     System.out.println(singleLetterCode+"_Glut2");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestGlut2");	
