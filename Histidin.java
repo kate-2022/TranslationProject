@@ -33,7 +33,7 @@ public class Histidin extends AminoAcids implements Translatable {
 				singleLetterCode = "H";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_Hist1");
+			     System.out.println(singleLetterCode+"_Hist1");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestHist1");	
@@ -46,7 +46,7 @@ public class Histidin extends AminoAcids implements Translatable {
 				singleLetterCode = "H";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_Hist2");
+			     System.out.println(singleLetterCode+"_Hist2");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestHist2");	
