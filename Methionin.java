@@ -2,15 +2,18 @@ import java.util.ArrayList;
 
 public class Methionin extends AminoAcids implements Translatable {
 	
-      // protected Translatable nextInChain;
-	  // protected String singleLetterCode;
-	  // protected ProteinSequence aminoAcid;
-	     private String peptide = ">";
-	     protected int i=0;
-	  // protected int j;
-    
-      // protected Substring pull;  
 
+    private String peptide = ">";
+   
+    // all marked instances/variables inherited from AminoAcids superclass !
+    
+    // protected Translatable nextInChain;
+    // protected String singleLetterCode;	
+    
+    protected ArrayList<String> codons; 
+    // protected ProteinSequence aminoAcid = new ProteinSequence(codons, ""); 	
+	// private SubTest substrings = new SubTest("") ;
+	// protected int i;
 
 	
 	// Konstruktor
@@ -18,51 +21,74 @@ public class Methionin extends AminoAcids implements Translatable {
 		this.singleLetterCode = singleLetterCode;
 	}
 
-	public Translatable setNextChain(Translatable nextChain) {
+	@Override
+	public void setNextChain(Translatable nextChain) {
 		this.nextInChain = nextChain;	
-		return nextInChain;
 	}
-	                                                                                      // toString()-Methode anpassen!! s.u.
 	
-	public String compareSub(ArrayList<String>codons, String peptide) {                 
-	  pull.getCodons();
-	  
-	  if (i == codons.size()) {                    
-		    System.out.print(peptide.toString());   
-	  }
-	  while( i <= codons.size()-1) {                  
+	              
+	@Override
+	public void compareSub(ArrayList<String> codons, String peptide) {  	
+		ArrayList<String> codons1 = new ArrayList<String>();    
+		
+		System.out.println(codons.get(i)+" TestMeth");	    	
+			
+		if( i < codons.size()) {  
+		    	System.out.println("TestMeth1");  
 		  if (codons.get(i).equals("AUG")) {                                
 			     singleLetterCode = "M";                       
-			     proteinSequence(peptide, singleLetterCode);
-			     i+=1;
-			     compareSub(codons, peptide);  			    
-			     return peptide; }		
-          // singleLetterCode auffangen in String-Variable peptide und mit weitergeben in der Chain of responsibility - als zweites Argument/Parameter 
-		                                        //  zweiten Index [j] verwenden
- 		  else {                                        
- 			  nextInChain.compareSub(codons, peptide);
-		
+			     i+=1;	
+			     System.out.println(codons.get(i)+" testAsc");
+			     
+			     System.out.println(singleLetterCode + " Meth ");
+			     peptide = peptide + singleLetterCode;
+			     
+			     codons.remove(0);
+			     codons1 = codons;
+			     nextInChain.compareSub(codons1, peptide);
+			     }		
+    
+ 		  else {     
+ 			  System.out.println("testPrintMeth");
+ 			  nextInChain.compareSub(codons1, peptide);
+		 
  		  }
 	 }
-		  return peptide;
-	  }
+		else {
+			  System.out.println("peptide sequence: " + peptide);
+		}
+ }    
 	
-
-	@Override
-    public String toString() {                        // das hier noch überprüfen und bei allen AS Klassen anpassen!!
-		peptide = peptide + singleLetterCode;
-		return peptide;
-    }
-     
+	
      public String getSingleLetterCode() {
  		return singleLetterCode;
  	}
 
      
-    @ Override
-	public String proteinSequence(String peptide, String singleLetterCode) {
-		peptide = peptide + singleLetterCode;
-		return peptide;
-	
-	}
+	    @ Override
+		public String proteinSequence(String peptide, String singleLetterCode) {
+			peptide = peptide + singleLetterCode;
+			return peptide;
+		
+		}
+
+		public String getPeptide() {
+			return peptide;
+		}
+
+		public void setPeptide(String peptide) {
+			this.peptide = peptide;
+		}
+
+	/*	public ProteinSequence getAminoAcid() {
+			return aminoAcid;
+		}
+
+		public void setAminoAcid(ProteinSequence aminoAcid) {
+			this.aminoAcid = aminoAcid;
+		}
+		*/
+
+
+
 }

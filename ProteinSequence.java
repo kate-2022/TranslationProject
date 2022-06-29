@@ -1,54 +1,30 @@
+import java.util.ArrayList;
+
 public class ProteinSequence { 
 	
-	private String proteinSequence;
 	private String peptide;
+	private ArrayList<String> codonsRNA;
 
-	public ProteinSequence (String peptide) {
+
+	public ProteinSequence (ArrayList<String> codons, String peptide) {
+		this.codonsRNA = codons;
 		this.peptide = peptide;
 	}
 
 
-/*	public String proteinSequence(String singleLetterCode) {
-		proteinSequence = proteinSequence + singleLetterCode;
-		return proteinSequence;
-	}*/
-	
-	
-	public String proteinSequence(String peptide, String singleLetterCode) {
-		peptide = peptide + singleLetterCode;
-		return peptide;
-	}
-
- 
-	@Override
-	public String toString() {
-    return "Die Aminosäre-Sequenz ist: " + proteinSequence ;
-	}
-	
-
-	
 	public String getPeptide() {
 		return peptide;
 	}
-
 
 	public void setPeptide(String peptide) {
 		this.peptide = peptide;
 	}
 
-	
-
-	public String getSubstring(String substring) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<String> getCodonsRNA() {
+		return codonsRNA;
 	}
 
-	public String getProteinSequence() {
-		return proteinSequence;
+	public void setCodonsRNA(ArrayList<String> codonsRNA) {
+		this.codonsRNA = codonsRNA;
 	}
-
-	public void setProteinSequence(String proteinSequence) {
-		this.proteinSequence = proteinSequence;
-	}
-
 }

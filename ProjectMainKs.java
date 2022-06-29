@@ -6,17 +6,17 @@ public class ProjectMainKs {
 	public static void main(String[] args)  {  
 	    
 	    String source = "";
-       // String singleLetterCode ="";
-       // String substring;
-	    String peptide =">";
+	   // String peptide =">";
         
         
        ArrayList<String> codonsM = new ArrayList<String>();
 	   
-	    //Objekte vom Typ Translatable (Klassen die das Interface implementieren) 
-	    // zum Vergleich des substring mit den jeweiligen spezifischen Codons f√ºr jede AA (compareSub)
-        Translatable aa1 = new Methionin("M");
-	    Translatable aa2 = new Alanin("A");
+	   // Einzelne Aminos‰uren = Objekte vom Typ Translatable (Klassen die das Interface implementieren) 
+       // zum Vergleich des jeweiligen Substrings aus der ArrayList <String> codons mit den jeweiligen spezifischen 
+       // Codons f¸r jede AA (compareSub ();)
+       
+      /* Translatable aa1 = new Methionin("M");       // codiert AUG   
+	    Translatable aa2 = new Alanin("A");           // codiert GCU, GCC, GCA, GCG  
 	    Translatable aa3 = new Valin("V");
 	    Translatable aa4 = new Leucin("L");
 	    Translatable aa5 = new Isoleucin("I");
@@ -34,7 +34,7 @@ public class ProjectMainKs {
 	    Translatable aa17 = new Arginin("R");
 	    Translatable aa18 = new Histidin("H");
 	    Translatable aa19 = new AsparagicAcid("D");
-	    Translatable aa20 = new GlutamicAcid ("E");
+	    Translatable aa20 = new GlutamicAcid ("E");     //  codiert GAA, GAG 
 	  
 	   
 	    aa1.setNextChain(aa2); 
@@ -56,10 +56,10 @@ public class ProjectMainKs {
 	    aa17.setNextChain(aa18);
 	    aa18.setNextChain(aa19);
 	    aa19.setNextChain(aa20);  
-	    aa20.setNextChain(aa2);
+	    aa20.setNextChain(aa2);  */
 	 
-	             // aa20 -> aa2    es geht ja in der Codon-Liste weiter mit dem n√§chsten Codon.. (Methionin ist nur Start-codon, deshalb zu aa2)
-	             //  daf√ºr darf also auch nicht die Anweisung nextInChain.compareSub im else{}-Block zum Schluss wegfallen !!!
+	             // aa20 -> aa2    es geht ja in der Codon-Liste weiter mit dem n‰chsten Codon.. (Methionin ist nur Start-codon, deshalb zu aa2)
+	             //  daf¸r darf also auch nicht die Anweisung nextInChain.compareSub im else{}-Block zum Schluss wegfallen !!!
 	    
 		Scanner scan = new Scanner (System.in);
 		System.out.println("Bitte geben Sie eine RNA-Sequenz ein. ");
@@ -76,22 +76,12 @@ public class ProjectMainKs {
 		
 		scan.close();
 		
-	    Substring sub = new Substring (source);  //Objekt vom Typ Substring
-	   // ProteinSequence peptide = new ProteinSequence (">");
-	  //   AminoAcids AA = new AminoAcids();
-		codonsM = sub.getCodons(); 
+	    Substring sub = new Substring (source);    
+	
 		codonsM = sub.createSubString(source);
 
-	    System.out.println("Die Substrings: " + codonsM);
-	         
-	 
-	        aa1.compareSub(codonsM, peptide);  
-	    
-             // g√ºltige Codons Bsp.  auguauugucaa, augcaucuuggc 
-	    
-	   // System.out.print(peptide.toString());  
-	                        // kein Zeilenumbruch, deshalb ohne ln !! ( die AA-Sequenz/ das Peptid soll kombiniert ausgegeben werden)
-
+		// System.out.println("TestMain");
+		
 	}
 }
 

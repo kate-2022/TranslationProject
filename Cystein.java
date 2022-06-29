@@ -3,55 +3,69 @@ import java.util.ArrayList;
 
 public class Cystein extends AminoAcids implements Translatable {
 	
-	    // protected Translatable nextInChain;
-		// protected String singleLetterCode;
-		// protected ProteinSequence aminoAcid;
-		// protected String peptide;
-		// protected int i;
-		// protected int j;
+	 // all marked instances/variables inherited from AATest superclass !
+    
+	 //	protected TranslInterface nextInChain;
+	 //	protected String singleLetterCode;
+	 //	protected ProtTest aminoAcid;
+
+	 //	protected int i;
 	
 	public Cystein (String singleLetterCode) {
 		this.singleLetterCode = singleLetterCode;
 	}
 	
 
-	public Translatable setNextChain(Translatable nextChain) {
+	@Override
+	public void setNextChain(Translatable nextChain) {
 		this.nextInChain = nextChain;	
-		return nextInChain;
+
 	}
 	
 	
-	public String compareSub(ArrayList<String>codons, String peptide){	  
-		 if (i == codons.size()) {   
-			    System.out.print(peptide.toString());   
-		    }
-		 
-		  while( i <= codons.size()-1) {  
+ 	@Override
+	public void compareSub(ArrayList<String> codons, String peptide) {    
+	    
+		  if( i < codons.size()) {  
+			  System.out.println(codons.get(i)+ " TestCys");  
+			  
 		  if (codons.get(i).equals("UGC")) {
 				singleLetterCode = "C";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     
-			     return peptide; }
+			     
+			     System.out.print(singleLetterCode+"_Cys1");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			     System.out.println("TestCys1");	
+			     
+			     nextInChain.compareSub(codons, peptide);
+		  		}
 		  
 		  else if (codons.get(i).equals("UGU")) {
 				singleLetterCode = "C";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     
-			     return peptide; }  
+			     
+			     System.out.print(singleLetterCode+"_Cys2");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			     System.out.println("TestCys2");	
+			     
+			     nextInChain.compareSub(codons, peptide);
+			     }  
 		  
-		  else {                                        
-				
- 			  nextInChain.compareSub(codons, peptide);
+		  
+		  else {        
+			      System.out.println("testPrintCys");
+				  nextInChain.compareSub(codons, peptide);
+
+			  }
+		  }
 		
- 		  }
-	 }
-		  return peptide;
+		  else {
+			  System.out.println("peptide sequence: " + peptide);
+			}
 	  }
-	
-	
-	
+
 	
      public String getSingleLetterCode() {
  		return singleLetterCode;

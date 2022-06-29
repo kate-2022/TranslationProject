@@ -2,57 +2,72 @@ import java.util.ArrayList;
 
 public class GlutamicAcid extends AminoAcids implements Translatable {
 	
-	    // protected Translatable nextInChain;
-		// protected String singleLetterCode;
-		// protected ProteinSequence aminoAcid;
-		// protected String peptide;
-		// protected int i;
-		// protected int j;
+	         // all marked instances/variables inherited from AATest superclass !
+    
+			 //	protected TranslInterface nextInChain;
+			 //	protected String singleLetterCode;
+			 //	protected ProtTest aminoAcid;
+		  
+	         //	protected int i;
+			
 	
 	public GlutamicAcid (String singleLetterCode ) {
 		this.singleLetterCode = singleLetterCode;
 	}
 
 	
-	public Translatable setNextChain(Translatable nextChain) {
+	@Override
+	public void setNextChain(Translatable nextChain) {
 		this.nextInChain = nextChain;	
-		return nextInChain;
 	}
 
-	
-	public String compareSub(ArrayList<String>codons, String peptide) {     
-	
-		if (i == codons.size()) {   
-			    System.out.print(peptide.toString());   
-		    }
-		 
-		  while( i <= codons.size()-1) {  
+	@Override
+	public void compareSub(ArrayList<String> codons, String peptide) {       
+			
+		  if( i < codons.size()) {  
+			  System.out.println(codons.get(i)+ " TestGlucAc");  
+			  
 		  if (codons.get(i).equals("GAA")) {
 				singleLetterCode = "E";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     
-			     return peptide; }
+			     
+			     System.out.println(singleLetterCode+"_GlutAc1");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			     System.out.println("TestGlucAc1");	
+			     nextInChain.compareSub(codons, peptide);
+				     }
 		  
 		  else if (codons.get(i).equals("GAG")) {
 				singleLetterCode = "E";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     
-			     return peptide; }  
+			     
+		         System.out.println(singleLetterCode+"_GlutAc2");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+		         System.out.println("TestGlucAc2");	
+			     nextInChain.compareSub(codons, peptide);   
+			     }  
 		  
-		  else {   
-			  System.out.println("Dieses Codon war ungÃ¼ltig! Bitte Ã¼berprÃ¼fen Sie Ihre Eingabe.");      
-			  System.exit(0) ;    // das hat gefehlt! :D
-			 // return null;
+		/*  else {   
+			  System.out.println("Dieses Codon war ungültig! Bitte überprüfen Sie Ihre Eingabe.");      
+			  System.exit(0) ;   	 
 			  
-		 		  }
-	 }
-		  return peptide;
+		 		}*/
+		  
+		    else {        
+				  System.out.println("testPrintGlutAc");
+				  nextInChain.compareSub(codons, peptide);
+
+	     	}
+		  }
+	
+		  else {
+			  System.out.println("peptide sequence: " + peptide);
+			} 
 	  }
 	
-
-	
+     
      public String getSingleLetterCode() {
  		return singleLetterCode;
  	}

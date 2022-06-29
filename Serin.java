@@ -3,78 +3,117 @@ import java.util.ArrayList;
 
 public class Serin extends AminoAcids implements Translatable {
 	
-	    // protected Translatable nextInChain;
-		// protected String singleLetterCode;
-		// protected ProteinSequence aminoAcid;
-		// protected String peptide;
-		// protected int i;
-		// protected int j;
+	 // all marked instances/variables inherited from AATest superclass !
+    
+	 //	protected TranslInterface nextInChain;
+	 //	protected String singleLetterCode;
+	 //	protected ProtTest aminoAcid;
+
+	 //	protected int i;
 	
 	public Serin (String singleLetterCode) {
 		this.singleLetterCode = singleLetterCode;
 	}
 
 
-	public Translatable setNextChain(Translatable nextChain) {
+	@Override
+	public void setNextChain(Translatable nextChain) {
 		this.nextInChain = nextChain;	
-		return nextInChain;
+
 	}
 
 	
-	public String compareSub(ArrayList<String>codons, String peptide){	  
-		 if (i == codons.size()) {   
-			    System.out.print(peptide.toString());   
-		    }
-		 
-		  while( i <= codons.size()-1) {  
+	@Override
+	public void compareSub(ArrayList<String> codons, String peptide) {    
+	    
+		  if( i < codons.size()) {  
+			  System.out.println(codons.get(i)+ " TestSer");  
+			  
 		  if (codons.get(i).equals("AGC")) {
 				singleLetterCode = "S";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     
-			     return peptide; }
+			     
+			     System.out.print(singleLetterCode+"_testSerin1");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			     System.out.println("TestCys1");	
+			     
+			     nextInChain.compareSub(codons, peptide);
+ }
 		  
 		  else if (codons.get(i).equals("AGU")) {
 				singleLetterCode = "S";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     
-			     return peptide; }  
+			     
+				 //  System.out.print(singleLetterCode+"_testSerin2");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			//     System.out.println("TestCys2");	
+			     
+			     nextInChain.compareSub(codons, peptide); 
+ 
+		  		}  
 		  
 		  else if (codons.get(i).equals("UCA")) {
 				singleLetterCode = "S";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     
-			     return peptide; }  
+
+			     //  System.out.print(singleLetterCode+"_testSerin3");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			//     System.out.println("TestCys3");	
+			     
+			     nextInChain.compareSub(codons, peptide); 
+			     
+		  		}  
 		  
 		  else if (codons.get(i).equals("UCC")) {
 				singleLetterCode = "S";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     
-			     return peptide; }  
+			     
+			     //  System.out.print(singleLetterCode+"_testSerin4");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			//     System.out.println("TestCys4");	
+			     
+			     nextInChain.compareSub(codons, peptide);  
+		  		}  
+		  
 		  else if (codons.get(i).equals("UCG")) {
 				singleLetterCode = "S";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     
-			     return peptide; }  
+			     
+			     //  System.out.print(singleLetterCode+"_testSerin5");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			//     System.out.println("TestCys5");	
+			     
+			     nextInChain.compareSub(codons, peptide);   
+		  		}  
 		  
 		  else if (codons.get(i).equals("UCU")) {
 				singleLetterCode = "S";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     
-			     return peptide; }  
+			     
+			     System.out.print(singleLetterCode+"_testSerin6");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			     System.out.println("TestCys6");	
+			     
+			     nextInChain.compareSub(codons, peptide);    
+		  		}  
 		  
-		  else {                                        
-				
- 			  nextInChain.compareSub(codons, peptide);
-		
- 		  }
-	 }
-		  return peptide;
+		  else {        
+				  System.out.println("testPrintSer");
+				  nextInChain.compareSub(codons, peptide);
+
+			  }
+		  }
+		  
+		  else {
+			  System.out.println("peptide sequence: " + peptide);
+			}	  
+
 	  }
 	
 	
