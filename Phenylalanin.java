@@ -34,7 +34,7 @@ public class Phenylalanin extends AminoAcids implements Translatable {
 				singleLetterCode = "F";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_Phenyl1");
+			     System.out.println(singleLetterCode+"_Phenyl1");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestPhenyl1");	
@@ -46,16 +46,16 @@ public class Phenylalanin extends AminoAcids implements Translatable {
 				singleLetterCode = "F";
 			     i+=1;
 			    
-			     System.out.print(singleLetterCode+"_Phenyl1");
+			     System.out.println(singleLetterCode+"_Phenyl2");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
-		         System.out.println("TestPhenyl1");	
+		         System.out.println("TestPhenyl2");	
 			     
 			     nextInChain.compareSub(codons, peptide);
 				}  
 		  
 		  else {        
-				  System.out.println("testPrintPhenyl1");
+				  System.out.println("testPrintPhenyl");
 				  nextInChain.compareSub(codons, peptide);
 
 			  }
