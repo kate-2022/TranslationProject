@@ -28,11 +28,12 @@ public class Arginin extends AminoAcids implements Translatable {
 	    
 		  if( i < codons.size()) {  
 			  System.out.println(codons.get(i)+ " TestArg");  
+			  
 		  if (codons.get(i).equals("AGA")) {
 				singleLetterCode = "R";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_Arg1");	
+			     System.out.println(singleLetterCode+"_Arg1");	
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestArg1");	
@@ -44,7 +45,7 @@ public class Arginin extends AminoAcids implements Translatable {
 				singleLetterCode = "R";
 			     i+=1;
 
-			     //System.out.print(singleLetterCode+"_Arg2");
+			     //System.out.println(singleLetterCode+"_Arg2");
 			     
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
@@ -56,7 +57,7 @@ public class Arginin extends AminoAcids implements Translatable {
 		  else if (codons.get(i).equals("CGA")) {
 				singleLetterCode = "R";
 			     i+=1;
-			     //System.out.print(singleLetterCode+"_Arg3");
+			     //System.out.println(singleLetterCode+"_Arg3");
 			     
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
@@ -68,7 +69,7 @@ public class Arginin extends AminoAcids implements Translatable {
 		  else if (codons.get(i).equals("CGC")){
 				singleLetterCode = "R";		    
 			     i+=1;
-			     //System.out.print(singleLetterCode+"_Arg4");
+			     //System.out.println(singleLetterCode+"_Arg4");
 			     
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
@@ -79,7 +80,7 @@ public class Arginin extends AminoAcids implements Translatable {
 		  else if (codons.get(i).equals("CGG")) {
 				singleLetterCode = "R";
 			     i+=1;
-			     //System.out.print(singleLetterCode+"_Arg5");
+			     //System.out.println(singleLetterCode+"_Arg5");
 			     
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
@@ -91,7 +92,7 @@ public class Arginin extends AminoAcids implements Translatable {
 		  else if (codons.get(i).equals("CGU")) {
 				singleLetterCode = "R";
 			     i+=1;
-			     System.out.print(singleLetterCode+"_Arg5");
+			     System.out.println(singleLetterCode+"_Arg5");
 			     
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
