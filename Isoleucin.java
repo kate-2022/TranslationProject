@@ -67,7 +67,7 @@ public class Isoleucin 	extends AminoAcids implements Translatable {
 			     } 
 		  
 		  else {        
-				  System.out.println("testPrintCys");
+				  System.out.println("testPrintIsoleu");
 				  nextInChain.compareSub(codons, peptide);
 
 			  }
