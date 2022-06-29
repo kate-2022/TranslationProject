@@ -33,7 +33,7 @@ public class Tyrosin extends AminoAcids implements Translatable {
 				singleLetterCode = "Y";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_Tyro1");
+			     System.out.println(singleLetterCode+"_Tyro1");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestTyro1");	
@@ -45,7 +45,7 @@ public class Tyrosin extends AminoAcids implements Translatable {
 				singleLetterCode = "Y";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_Tyro2");
+			     System.out.println(singleLetterCode+"_Tyro2");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestTyro2");	
