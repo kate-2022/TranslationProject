@@ -33,7 +33,7 @@ public class Lysin extends AminoAcids implements Translatable {
 				singleLetterCode = "K";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_Lysin1");
+			     System.out.println(singleLetterCode+"_Lysin1");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestLys1");	
@@ -45,7 +45,7 @@ public class Lysin extends AminoAcids implements Translatable {
 				singleLetterCode = "K";
 			     i+=1;
 			
-			     System.out.print(singleLetterCode+"_Lysin2");
+			     System.out.println(singleLetterCode+"_Lysin2");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 		         System.out.println("TestLys2");	
