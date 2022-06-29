@@ -31,7 +31,7 @@ public class Alanin extends AminoAcids implements Translatable {
 				singleLetterCode = "A";
 			     i+=1;
 		
-			     System.out.print(singleLetterCode+"_Ala1");	
+			     System.out.println(singleLetterCode+"_Ala1");	
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestAla1");	
