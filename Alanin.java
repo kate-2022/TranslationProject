@@ -1,87 +1,93 @@
 import java.util.ArrayList;
-// import java.util.LinkedList;
 
-public class Alanin extends AminoAcids implements Translatable {
-	
-	    // protected Translatable nextInChain;
-		// protected String singleLetterCode;
-		// protected ProteinSequence aminoAcid;
-		    // protected String peptide;
-		// protected int i;
-		// protected int j;
-		// protected Substring pull = new Substring ("");  
-	
+public class Alanin extends AminoAcids implements Translatable {	
+
+		// all marked instances/variables inherited from AATest superclass !
+    
+		//	protected TranslInterface nextInChain;
+		//	protected String singleLetterCode;
+		//	protected ProtTest aminoAcid;
+
+		//	protected int i;
+
 
 	public Alanin (String singleLetterCode) {
 		this.singleLetterCode = singleLetterCode;
 	}
 	
 	
-	public Translatable setNextChain(Translatable nextChain) {
+	@Override
+	public void setNextChain(Translatable nextChain) {
 		this.nextInChain = nextChain;	
-		return nextInChain;
+	
 	}
 	
- 	
-	public String compareSub(ArrayList<String>codons, String peptide)  {
-		pull.getCodons();
-	    aminoAcid.getPeptide();  
-		if (i == codons.size()) {   
-			    System.out.print(peptide.toString());   
-		  }
-		  while( i <= codons.size()-1) {  
-	 
+   	@Override
+	public void compareSub(ArrayList<String> codons, String peptide) {    
+	    
+		  if( i < codons.size()) {  
+			  System.out.println(codons.get(i)+ " TestAla");  
 			  if (codons.get(i).equals("GCA")) {
 				singleLetterCode = "A";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide); 			 
-			     return peptide; }
+		
+			     System.out.print(singleLetterCode+"_Ala1");	
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			     System.out.println("TestAla1");	
+			     
+			     nextInChain.compareSub(codons, peptide);
+				     }
 			  
 			  else if (codons.get(i).equals("GCC")) {
 				singleLetterCode = "A";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     			 
-			     return peptide; }  
+	
+			 //    System.out.println(singleLetterCode+"_Ala2");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			//     System.out.println("TestAla2");	
+			     nextInChain.compareSub(codons, peptide);
+				     }
 			  
 			  else if (codons.get(i).equals("GCG")) {
 				singleLetterCode = "A";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);     
-			     return peptide; }  
+		
+			//     System.out.println(singleLetterCode+"_Ala3");
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			//     System.out.println("TestAla3");	
+			     nextInChain.compareSub(codons, peptide);
+				     } 
 			  
 			  else if (codons.get(i).equals("GCU")) {
 				singleLetterCode = "A";
-			     proteinSequence(peptide, singleLetterCode);
 			     i+=1;
-			     compareSub(codons, peptide);   	
-			     return peptide; }  
+			
+			     System.out.println(singleLetterCode+"_Ala4"); 
+			     peptide = peptide + singleLetterCode;
+			     codons.remove(0);
+			     System.out.println("TestAla4");	
+			     nextInChain.compareSub(codons, peptide);
+			     }
 		  
-			  else {                                        
- 			  nextInChain.compareSub(codons, peptide);
+			  else {        
+				  System.out.println("testPrintAla");
+				  nextInChain.compareSub(codons, peptide);
 	
- 		  }
-	 }
-		  return peptide;
-	  }
-	
-	
-	
+			  }
+		  }
+		  else {
+			  System.out.println("peptide sequence: " + peptide);
+			}
+
+   	}
+
      
      public String getSingleLetterCode() {
 		return singleLetterCode;
 	}
-
-     
-/*	@Override
-    public String toString() {
-		peptide = peptide + singleLetterCode;
-		return peptide;
-    }
-     */
-
 
 	
 }
