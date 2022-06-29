@@ -34,7 +34,7 @@ public class AsparagicAcid extends AminoAcids implements Translatable {
 				singleLetterCode = "D";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_AspAc1");	
+			     System.out.println(singleLetterCode+"_AspAc1");	
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestAspAc1");	
@@ -47,7 +47,7 @@ public class AsparagicAcid extends AminoAcids implements Translatable {
 				singleLetterCode = "D";
 			     i+=1;
 			     
-			 	//     System.out.print(singleLetterCode+"_AspAc2");	
+			 	//     System.out.println(singleLetterCode+"_AspAc2");	
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			//     System.out.println("TestAspAc2");	
