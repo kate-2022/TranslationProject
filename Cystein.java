@@ -33,7 +33,7 @@ public class Cystein extends AminoAcids implements Translatable {
 				singleLetterCode = "C";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_Cys1");
+			     System.out.println(singleLetterCode+"_Cys1");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestCys1");	
@@ -45,7 +45,7 @@ public class Cystein extends AminoAcids implements Translatable {
 				singleLetterCode = "C";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_Cys2");
+			     System.out.println(singleLetterCode+"_Cys2");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestCys2");	
