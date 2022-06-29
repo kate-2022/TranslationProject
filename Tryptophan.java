@@ -33,7 +33,7 @@ public class Tryptophan extends AminoAcids implements Translatable {
 				singleLetterCode = "W";
 			     i+=1;
 			     
-			     System.out.print(singleLetterCode+"_Trypto1");
+			     System.out.println(singleLetterCode+"_Trypto1");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestTrypto1");	
