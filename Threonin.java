@@ -35,7 +35,7 @@ public class Threonin extends AminoAcids implements Translatable {
 			     System.out.print(singleLetterCode+"_testThreonin1");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
-			     System.out.println("TestCys1");	
+			     System.out.println("TestThreonin1");	
 			     
 			     nextInChain.compareSub(codons, peptide); 
 		   
@@ -48,7 +48,7 @@ public class Threonin extends AminoAcids implements Translatable {
 			   //  System.out.print(singleLetterCode+"_testThreonin2");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
-			   //  System.out.println("TestCys2");	
+			   //  System.out.println("TestThreonin2");	
 			     
 			     nextInChain.compareSub(codons, peptide);    
 			   } 
@@ -60,7 +60,7 @@ public class Threonin extends AminoAcids implements Translatable {
 			   //  System.out.print(singleLetterCode+"_testThreonin3");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
-			   //  System.out.println("TestCys3");	
+			   //  System.out.println("TestThreonin3");	
 			     
 			     nextInChain.compareSub(codons, peptide);     
 		  		}  
@@ -72,7 +72,7 @@ public class Threonin extends AminoAcids implements Translatable {
 			     System.out.print(singleLetterCode+"_testThreonin4");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
-			     System.out.println("TestCys4");	
+			     System.out.println("TestThreonin4");	
 			     
 			     nextInChain.compareSub(codons, peptide);   
 		  }
