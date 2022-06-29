@@ -32,7 +32,7 @@ public class Isoleucin 	extends AminoAcids implements Translatable {
 				singleLetterCode = "I";
 			     i+=1;
 			     		     
-			     System.out.print(singleLetterCode+"_Isoleu1");
+			     System.out.println(singleLetterCode+"_Isoleu1");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestIsoleu1");	
@@ -45,7 +45,7 @@ public class Isoleucin 	extends AminoAcids implements Translatable {
 				singleLetterCode = "I";
 			     i+=1;
 			     
-			     //System.out.print(singleLetterCode+"_Isoleu2");
+			     //System.out.println(singleLetterCode+"_Isoleu2");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			//     System.out.println("TestIsoleu2");	
@@ -57,7 +57,7 @@ public class Isoleucin 	extends AminoAcids implements Translatable {
 				singleLetterCode = "I";
 			     i+=1;
 			
-			     System.out.print(singleLetterCode+"_Isoleu2");
+			     System.out.println(singleLetterCode+"_Isoleu2");
 			     peptide = peptide + singleLetterCode;
 			     codons.remove(0);
 			     System.out.println("TestIsoleu2");	
